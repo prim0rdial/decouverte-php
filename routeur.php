@@ -33,5 +33,11 @@ if (isset($_GET["page"])) {
         case "test_zone":
             include "test_zone.php";
             break;
+        case "json_member";
+            include "./json-members/index.php";
+            break;
+        case "signup";
+            include "./json-members/signup.php";
+            break;
     }
 }
