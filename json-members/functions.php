@@ -16,3 +16,24 @@ function username_v()
         return false;
     }
 }
+
+function email_v()
+{
+    global $error;
+    if (isset($_POST["email"]) and ($_POST["email"] != null) and (isset($_POST["email2"]) and $_POST["email2"] != null)) {
+        if ($_POST["email"]) {
+            if ($_POST["email"] != $_POST["email2"]) {
+                $error = " Email ne correspond pas";
+                return false;
+            } else {
+                return true;
+            }
+        } else {
+            $error = "Veuillez saisir un e-mail valide";
+            return false;
+        }
+    } else {
+        $error = "Veuillez remplir les champ email";
+        return false;
+    }
+}

@@ -34,10 +34,16 @@ if (isset($_GET["page"])) {
             include "test_zone.php";
             break;
         case "json_member";
-            include "./json-members/index.php";
+            include "./json-members/json_member.php";
             break;
         case "signup";
             include "./json-members/signup.php";
+            break;
+        case "cookie";
+            include "./json-members/cookie.php";
+            break;
+        case "db";
+            include "./db/db.php";
             break;
     }
 }

@@ -1,37 +1,28 @@
-<!Doctype html>
-<html dir="ltr" lang="fr">
-
-<head>
-    <meta charset="utf-8">
-    <title> Nouvel enregistrement
-    </title>
-    <link href="style.css" rel="stylesheet" type="text/css"/>
-</head>
-
-<body>
-<div class="mainLayout">
-    <div class="header">
-        <a href="#"> Accueil</a>
-        <a href="login.php"> Connexion</a>
-        <a href="signup.php"> Inscription</a>
-    </div>
-    <div class="content">
+<?php
+$content = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, alias!";
+setcookie("testcookie", $content, time() + 30);
+var_dump($_COOKIE["testcookie"]);
+?>
+<div>
+    <nav class="navbar mt-3 container">
+        <a href="index.php?page=index" class="nav-link">Accueil</a>
+        <a href="index.php?page=login" class="nav-link">Connexion</a>
+        <a href="index.php?page=signup" class="nav-link">Inscription</a>
+    </nav>
+    <div class="container mt-3">
         <form action="index.php?page=signup&action=submit" method="POST">
             <table>
                 <tr>
                     <td><label> Nom : </label></td>
-                    <td><input type="text" name="username"
-                               value="<?php echo isset($_POST['username']) ? $_POST['username'] : ''; ?>"></td>
+                    <td><input type="text" name="username" value="<?php echo isset($_POST['username']) ? $_POST['username'] : ''; ?>"></td>
                 </tr>
                 <tr>
                     <td><label> E-mail : </label>
-                    <td><input type="text" name="email"
-                               value="<?php echo isset($_POST['email']) ? $_POST['email'] : ''; ?>"><br>
+                    <td><input type="text" name="email" value="<?php echo isset($_POST['email']) ? $_POST['email'] : ''; ?>"><br>
                 </tr>
                 <tr>
                     <td><label>Confirmation E-mail :</label>
-                    <td><input type="text" name="email2"
-                               value="<?php echo isset($_POST['email2']) ? $_POST['email2'] : ''; ?>"><br>
+                    <td><input type="text" name="email2" value="<?php echo isset($_POST['email2']) ? $_POST['email2'] : ''; ?>"><br>
                 </tr>
                 <tr>
                     <td><label>Mot de passe : </label>
@@ -47,22 +38,18 @@
             </table>
         </form>
     </div>
-    <div class="footer">
-        <span>Tous droits résérvés</span><br/>
-    </div>
 </div>
-<div>
-    <H2>COOKIES</H2>
-    <form action="cookie.php" method="get">
-        please enter your name :
-        <input type="text" name="name">
+<div class="container mt-3">
+    <h2 class="text-danger">COOKIES</h2>
+    <form action="./json-members/cookie.php" method="get">
+        <label for="name">please enter your name :</label>
+        <input type="text" name="name" id="name">
         <input type="submit" value="send">
     </form>
 </div>
-</body>
-
-</html>
 <!--
+    <form action="./json-members/cookie.php" method="get">
+
 [
 {
  "username":"username1",
